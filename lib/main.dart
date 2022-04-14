@@ -102,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            const IconWithText(),
           ],
         ),
       ),
@@ -110,6 +111,42 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class IconWithText extends StatelessWidget {
+  const IconWithText({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      height: 200,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/test.png',
+              width: 64,
+              height: 64,
+              color: Colors.red,
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const Text(
+              'Test Label',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.orange,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
